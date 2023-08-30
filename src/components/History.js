@@ -9,7 +9,7 @@ const History = ({ history }) => {
     return (
         <div>
             {historyDisplay}
-            Work History Component - Will also render HistoryForm after onClick to add more hx
+            <button>Add History</button>
         </div>
     )
 };

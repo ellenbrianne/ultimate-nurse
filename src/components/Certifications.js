@@ -1,8 +1,14 @@
-const Certifications = () => {
+import CertCard from "./CertCard";
+
+const Certifications = ({ certs }) => {
+
+    const certDisplay = certs.map(cert => {
+        return <CertCard key={cert.id} cert={cert} />
+    });
+   
     return (
         <div>
-            Certifications Component -- mimicking History, will also load up certs from cert state
-            Will have button to add more certs.
+            {certDisplay}
         </div>
     )
 };
