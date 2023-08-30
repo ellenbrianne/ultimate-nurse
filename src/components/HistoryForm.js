@@ -1,31 +1,55 @@
+import { useState } from "react";
 
+const HistoryForm = ({ addHistory }) => {
+    const emptyObj = {
+        facility: "",
+        start: "",
+        end: "",
+        unit: ""
+    }
 
-const HistoryForm = () => {
+    const [formObj, setFormObj] = useState(emptyObj);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        addHistory(formObj);
+        setFormObj(emptyObj);
+    };
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormObj({ ...formObj, [name]: value });
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <input 
                 type="text"
                 name="facility"
                 placeholder="Facility"
-                value={null}
+                value={formObj.facility}
+                onChange={handleChange}
             /> <br/>
             <input 
                 type="text"
                 name="start"
                 placeholder="Start Date"
-                value={null}
+                value={formObj.start}
+                onChange={handleChange}
             /> <br/>
             <input 
                 type="text"
                 name="end"
                 placeholder="End Date"
-                value={null}
+                value={formObj.end}
+                onChange={handleChange}
             /> <br/>
             <input 
                 type="text"
                 name="unit"
                 placeholder="Unit"
-                value={null}
+                value={formObj.unit}
+                onChange={handleChange}
             /> <br/>
             <button>Submit</button>
         </form>

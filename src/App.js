@@ -4,9 +4,8 @@ import History from './components/History';
 import Certifications from './components/Certifications';
 import { useState, useEffect } from "react";
 
-// state for history & certs will live here
-
 function App() {
+
   const [history, setHistory] = useState([]);
   const [certifications, setCertifications] = useState([]);
 
@@ -20,10 +19,27 @@ function App() {
       .then(certData => setCertifications(certData))
   }, []);
 
+  const addHistory = (newHistory) => {
+    fetch("http://localhost:3000/history", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(newHistory)
+    })
+      .then(r => r.json())
+      .then(newHistoryObj => setHistory(prevList => [ ...prevList, newHistoryObj ]))
+  };
+
   return (
     <div className="App">
+      <h2>Ultimate Nurse: Ellen Bennett</h2>
       <NavBar />
-      <History history={history}/>
+      <History 
+        history={history} 
+        addHistory={addHistory}
+      />
       <Certifications certs={certifications}/>
     </div>
   );
