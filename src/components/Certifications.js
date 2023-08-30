@@ -9,6 +9,7 @@ const Certifications = ({ certs }) => {
     return (
         <div>
             {certDisplay}
+            <button>Add Certification</button>
         </div>
     )
 };

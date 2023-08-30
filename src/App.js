@@ -20,8 +20,6 @@ function App() {
       .then(certData => setCertifications(certData))
   }, []);
 
-
-
   return (
     <div className="App">
       <NavBar />
