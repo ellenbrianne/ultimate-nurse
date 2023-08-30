@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar';
+import History from './components/History';
+import Certifications from './components/Certifications';
+import { useState, useEffect } from "react";
+
+// state for history & certs will live here
 
 function App() {
+  const [history, setHistory] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/history")
+      .then(r => r.json())
+      .then(historyData => setHistory(historyData))
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Testing.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <History history={history}/>
+      <Certifications />
     </div>
   );
 }

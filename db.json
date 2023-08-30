@@ -1,0 +1,58 @@
+{
+    "history": [
+        {
+            "id": 1,
+            "facility": "Our Lady of Lourdes RMC",
+            "unit": "ED",
+            "start": "02-09-2019",
+            "end": "02-12-2022"
+        },
+        {
+            "id": 2,
+            "facility": "North Suburban Medical Center",
+            "unit": "ED",
+            "start": "03-07-2022",
+            "end": "08-13-2022"
+        },
+        {
+            "id": 3,
+            "facility": "UCHealth",
+            "unit": "ED",
+            "start": "03-25-2023",
+            "end": "current"
+        }  
+    ],
+    "certifications": [
+        {
+            "id": 1,
+            "type": "ACLS",
+            "expiration": "06/2024",
+            "body": "AHA"
+        },
+        {
+            "id": 2,
+            "type": "PALS",
+            "expiration": "05/2023",
+            "body": "AHA"
+        },
+        {
+            "id": 3,
+            "type": "BLS",
+            "expiration": "07/2025",
+            "body": "AHA"
+        }, 
+        {
+            "id": 4,
+            "type": "TNCC",
+            "expiration": "06/2026",
+            "body": "ENA"
+        },
+        {
+            "id": 5,
+            "type": "ENPC",
+            "expiration": "06/2026",
+            "body": "ENA"
+        }
+    ]
+}
+    

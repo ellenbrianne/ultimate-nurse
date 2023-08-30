@@ -1,7 +1,8 @@
 const NavBar = () => {
     return (
         <div>
-            NavBar Component -- will hold tabs for Work History and Certifications
+            <p>Work History</p>
+            <p>Certifications</p>
         </div>
     )
 };
