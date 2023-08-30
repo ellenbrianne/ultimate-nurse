@@ -32,6 +32,19 @@ function App() {
       .then(newHistoryObj => setHistory(prevList => [ ...prevList, newHistoryObj ]))
   };
 
+  const addCert = (newCert) => {
+    fetch("http://localhost:3000/certifications", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(newCert)
+    })
+      .then(r => r.json())
+      .then(newCertObj => setCertifications(prevList => [ ...prevList, newCertObj ]))
+  };
+
   return (
     <div className="App">
       <h2>Ultimate Nurse: Ellen Bennett</h2>
@@ -40,7 +53,10 @@ function App() {
         history={history} 
         addHistory={addHistory}
       />
-      <Certifications certs={certifications}/>
+      <Certifications 
+        certs={certifications}
+        addCert={addCert}
+      />
     </div>
   );
 }
