@@ -1,8 +1,10 @@
 import './App.css';
+import Bio from './components/Bio';
 import NavBar from './components/NavBar';
 import History from './components/History';
 import Certifications from './components/Certifications';
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
 
@@ -47,16 +49,29 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Ultimate Nurse: Ellen Bennett</h2>
       <NavBar />
-      <History 
-        history={history} 
-        addHistory={addHistory}
-      />
-      <Certifications 
-        certs={certifications}
-        addCert={addCert}
-      />
+      <Routes>
+        <Route path="/" element={<Bio />} />
+        <Route 
+          path="/work-history"
+          element={
+            <History 
+              history={history} 
+              addHistory={addHistory}
+            />
+          }
+        />
+        <Route  
+          path="/certifications"
+          element={
+            <Certifications 
+              certs={certifications}
+              addCert={addCert}
+            />
+          }
+        />
+      </Routes>
+      
     </div>
   );
 }
