@@ -15,7 +15,9 @@ const Certifications = ({ certs, addCert }) => {
    
     return (
         <div>
-            {certDisplay}
+            <div className="container">
+               {certDisplay} 
+            </div>
             <button onClick={toggleForm}>{isForm ? "Complete Certifications" : "Add Certification"}</button>
             {isForm ? <CertForm addCert={addCert}/> : null }
         </div>

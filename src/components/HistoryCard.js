@@ -4,7 +4,7 @@ const HistoryCard = ({ hx }) => {
 
     return (
         <div>
-            <div className="hx card">
+            <div className="card">
                 <h4>{facility}</h4>
                 Start Date: {start} <br/>
                 End Date: {end} <br/>

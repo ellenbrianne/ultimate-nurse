@@ -15,9 +15,13 @@ const History = ({ history, addHistory }) => {
 
     return (
         <div>
-            {historyDisplay}
-            <button onClick={toggleForm}>{isForm ? "Complete History" : "Add History"}</button>
-            {isForm ? <HistoryForm addHistory={addHistory} /> : null }
+            <div className="container">
+                {historyDisplay}
+            </div>
+            <div>
+                <button onClick={toggleForm}>{isForm ? "Complete History" : "Add History"}</button>
+                {isForm ? <HistoryForm addHistory={addHistory} /> : null }
+            </div>
         </div>
     )
 };

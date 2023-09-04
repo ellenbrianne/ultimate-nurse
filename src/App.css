@@ -1,14 +1,8 @@
 .App {
   text-align: center;
-}
-
-.App h2 {
-  background-color: #282c34;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: rgb(37, 51, 63);
+  top: 1%;
+  bottom: 2%;
+  width: 100%;
+  position: absolute;
 }
